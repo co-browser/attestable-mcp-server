@@ -52,7 +52,9 @@ jobs:
           docker image ls -a
 
       - name: Test command line
-        run: ./run.sh 
-
+        run: |
+          chmod +x ./run.sh 
+          ./run.sh attestable-mcp-server
+          
       - name: Test attestable-mcp-server
         run: docker run -itd --privileged --rm --net host -v /dev/sgx_enclave:/dev/sgx/enclave -v /dev/sgx_provision:/dev/sgx/provision -v /var/run/aesmd:/var/run/aesmd attestable-mcp-server:latest
