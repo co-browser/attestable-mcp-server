@@ -1,0 +1,6 @@
+Distro: "ubuntu:24.04"
+Registry: ""
+Gramine:
+    Repository: "https://github.com/gramineproject/gramine.git"
+    Branch:     "v1.7"
+    Image:      "gramine_base"
