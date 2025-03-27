@@ -19,11 +19,31 @@ The most important concept behind this RA-TLS certificate is that it embeds an [
  - Gramine
  - python 3.13
  - Ubuntu 22.04
+ - Intel SGX SDK & PSW
    
-## Installation
+## Quickstart
 
- - TODO
+```
+uv sync
+docker build -t attestable-mcp-server .
+gramine-sgx-gen-private-key
+git clone https://github.com/gramineproject/gsc docker/gsc
+cd docker/gsc
+./gsc build-gramine --rm --no-cache -c ../config_build_base.yaml gramine-base
+./gsc build -c ../config.yaml --rm attestable-mcp-server ../gramine.manifest
+./gsc sign-image -c ../config.yaml  attestable-mcp-server "$HOME"/.config/gramine/enclave-key.pem
+./gsc info-image gsc-attestable-mcp-server
+```
 
+## Starting Server on Secure Hardware
+```
+docker run -itp --device=/dev/sgx_provision:/dev/sgx/provision  --device=/dev/sgx_enclave:/dev/sgx/enclave -v /var/run/aesmd/aesm.socket:/var/run/aesmd/aesm.socket -p 8000:8000 --rm gsc-attestable-mcp-server
+```
+
+## Starting Server on local development machine
+```
+docker run -p 8000:8000 --rm gsc-attestable-mcp-server
+```
 ## Future Plans
 
  - JSON Web Key (JWK) attestation claim validation
