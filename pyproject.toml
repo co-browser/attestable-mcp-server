@@ -17,6 +17,11 @@ dependencies = [
     "sse-starlette>=1.6.1",
     "pydantic-settings>=2.5.2",
     "uvicorn>=0.23.1",
+    "docker>=7.1.0",
+    "jinja2>=3.1.6",
+    "tomli>=2.2.1",
+    "tomli-w>=1.2.0",
+    "pyyaml>=6.0.2",
 ]
 
 
