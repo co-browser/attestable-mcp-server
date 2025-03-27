@@ -29,10 +29,10 @@ docker build -t attestable-mcp-server .
 gramine-sgx-gen-private-key
 git clone https://github.com/gramineproject/gsc docker/gsc
 cd docker/gsc
-./gsc build-gramine --rm --no-cache -c ../config_build_base.yaml gramine-base
-./gsc build -c ../config.yaml --rm attestable-mcp-server ../gramine.manifest
-./gsc sign-image -c ../config.yaml  attestable-mcp-server "$HOME"/.config/gramine/enclave-key.pem
-./gsc info-image gsc-attestable-mcp-server
+uv run ./gsc build-gramine --rm --no-cache -c ../gramine_base.config.yaml gramine_base
+uv run ./gsc build -c ../attestable-mcp-server.config.yaml --rm attestable-mcp-server ../attestable-mcp-server.manifest
+uv run ./gsc sign-image -c ../attestable-mcp-server.config.yaml  attestable-mcp-server "$HOME"/.config/gramine/enclave-key.pem
+uv run ./gsc info-image gsc-attestable-mcp-server
 ```
 
 ## Starting Server on Secure Hardware
