@@ -34,7 +34,7 @@ jobs:
           path: /tmp/attestable-mcp-server.tar
   test:
     name: "test attestable-mcp-server docker"
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, gramine]
     needs: attestable_build
     steps:
       - uses: actions/checkout@v4
