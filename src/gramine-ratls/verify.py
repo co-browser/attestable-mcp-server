@@ -1,6 +1,7 @@
 """
-Largely inspired from
-https://github.com/gramineproject/gramine/commit/1a1869468aef7085d6c9d722adf9d1d0484e1b4c # noqa: E501
+The content of this file is largely inspired from the
+corresponding C implementation of the Gramine gramine-ratls
+utility tool and adapted from: https://github.com/dscc-admin-ch/gramine-ratls-python
 """
 
 import ctypes
