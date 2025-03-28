@@ -1,9 +1,7 @@
 """
 The content of this file is largely inspired from the
 corresponding C implementation of the Gramine gramine-ratls
-utility tool.
-
-TODO: The license information needs to be sorted out
+utility tool and adapted from: https://github.com/dscc-admin-ch/gramine-ratls-python
 """
 
 import ctypes
