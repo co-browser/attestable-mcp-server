@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/co-browser-attestable-mcp-server-badge.png)](https://mseep.ai/app/co-browser-attestable-mcp-server)
+
 # ➡️ attestable-mcp-server
 <div align="center">
 
