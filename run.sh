@@ -27,3 +27,5 @@ docker run \
     $INTERACTIVE \
     $(docker build -q .) \
     "$@"
+
+
