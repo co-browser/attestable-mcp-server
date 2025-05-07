@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   attestable_build:
-    runs-on: [self-hosted, gramine]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
